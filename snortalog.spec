@@ -5,18 +5,11 @@
 
 Summary: Snort log analyzer
 Name: snortalog
-Version:        @@VERSION@@
-Release:        @@RELEASE@@
+Version: 0.0.1
+Release: 1%{?dist}
 License: GPL
-Group: Applications/Internet
 URL: http://jeremy.chartier.free.fr/snortalog/
-
-Packager: Giacomo Sanchietti <giacomo.sanchietti@nethesis.it>
-Vendor: NethServer, http://www.netheserver.org
-
-#Source: %{name}-%{version}-neth.tgz
 Source: %{name}-%{version}.tar.gz
-
 
 BuildRequires: perl
 Requires: perl
@@ -41,13 +34,9 @@ logs in a simmilar way.
 rm -rf $RPM_BUILD_ROOT
 (cd root ; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
 
-%clean
-%{__rm} -rf %{buildroot}
-
 %files
 %defattr(-,root,root)
 %attr(0755,root,root) /usr/share/snortalog/snortalog.pl
 /usr/share/snortalog/
-
 
 %changelog
